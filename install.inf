@@ -1,0 +1,16 @@
+[info]
+title=Config Icons
+desc=Allows to change icon-set on toolbar
+type=cudatext-plugin
+subdir=cuda_config_icons
+homepage=
+
+[item1]
+section=commands
+caption=Config Icons
+method=run
+
+[item2]
+section=events
+events=on_start
+
