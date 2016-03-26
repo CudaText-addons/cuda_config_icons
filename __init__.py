@@ -36,7 +36,7 @@ class Command:
         if not dirs:
             print('Cannot find icon-sets')
             return
-        dirs = [name_def] + dirs
+        dirs = [name_def] + sorted(dirs)
         res = dlg_menu(MENU_LIST, '\n'.join(dirs))
         if res is None: return
 
