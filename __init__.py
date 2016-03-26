@@ -9,7 +9,7 @@ def do_load_icons(name):
     dir = os.path.join(dir_icons, name)
     if not os.path.isdir(dir): return
     
-    print('Setting icons: '+name)
+    print('Setting icons:', name)
     s = name.split('_')[1].split('x')
     app_proc(PROC_TOOLBAR_ICON_SET_SIZE, s[0]+','+s[1])
     
@@ -20,18 +20,17 @@ def do_load_icons(name):
         if not name: continue
         filename = os.path.join(dir, name+'.png')
         if not os.path.isfile(filename):
-            print('Cannot find icon: '+filename)
+            print('Cannot find icon:', filename)
             continue
         index = app_proc(PROC_TOOLBAR_ICON_ADD, filename)
         if index is None:
-            print('Cannot load icon: '+filename)
+            print('Cannot load icon:', filename)
             continue
         app_proc(PROC_TOOLBAR_ICON_SET, str(i)+','+str(index))
     
 
 class Command:
     def run(self):
-        #do_load_icons('tango_22x22')
         dirs = os.listdir(dir_icons)
         if not dirs:
             print('Cannot find icon-sets')
